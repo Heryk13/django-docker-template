@@ -1,6 +1,11 @@
-asgiref==3.7.2
-Django==5.0
-setuptools==68.2.2
-sqlparse==0.4.4
-tzdata==2023.3
-wheel==0.41.2
+dash>=2.0,<2.10
+plotly
+dpd-components
+
+dash-bootstrap-components
+
+channels>=2.0
+Django>=3.2,<5.0.0
+Flask>=1.0.2
+Werkzeug
+django-plotly-dash

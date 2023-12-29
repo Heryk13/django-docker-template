@@ -1,15 +1,13 @@
-FROM ubuntu
+FROM python:3.10
 
-RUN mkdir /app
-
-RUN apt-get update && apt-get install -y python3 python3-pip
+WORKDIR /app
 
 COPY . /app
 
-RUN pip3 install pipenv
-
-RUN pip3 install pyxel
+RUN pip install --upgrade pip setuptools wheel
 
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
+
+RUN pip install --no-cache-dir --upgrade -r /app/dev_requirements.txt
 
 ENV PYTHONUNBUFFERED=1

@@ -1,5 +1,8 @@
 version: "3.10"
 
+networks:
+  app-network:
+
 services:
   django:
     build: .
@@ -14,5 +17,13 @@ services:
       - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1
     depends_on:
       - redis
+    networks:
+      - app-network
   redis:
-    image: "redis:alpine"
+    container_name: redis
+    restart: always
+    image: redis:latest
+    expose:
+      - "6379"
+    networks:
+      - app-network
