@@ -13,5 +13,3 @@ RUN pip3 install pyxel
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
 ENV PYTHONUNBUFFERED=1
-
-ENTRYPOINT ["python3", "/app/src/core/manage.py", "runserver", "0.0.0.0:8000"]

@@ -1,0 +1,18 @@
+version: "3.10"
+
+services:
+  django:
+    build: .
+    container_name: django
+    command: python3 /app/src/core/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - "8080:8000"
+    environment:
+      - DEBUG=1
+      - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1
+    depends_on:
+      - redis
+  redis:
+    image: "redis:alpine"

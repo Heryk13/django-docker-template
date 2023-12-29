@@ -6,3 +6,7 @@ docker run -p 8080:8000 django-docker
 
 ## access django
 localhost:8080
+
+## run composer
+docker-compose run django
+docker-compose up
