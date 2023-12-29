@@ -1,4 +1,4 @@
-## run composer
+## build and run composer
 docker-compose up --build
 
 ## access django
